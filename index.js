@@ -33,19 +33,15 @@ function fillArray() {
   for (var i = 0; i < noteOutput.length; i++) {
     var entry = noteOutput[i];
     if (i % 2 !== 0) {
-      try {
-        newEntryTitle.style.cssText = "background-color: #CBFFFA;";
-        newEntryBody.style.cssText = "background-color: #CBFFFA;";
-      } catch (e) {
-        console.log(e);
-      }
+      newEntryTitle.style.cssText = "background-color: #CBFFFA;";
+      newEntryBody.style.cssText = "background-color: #CBFFFA;";
     } else {
       newEntryTitle.style.cssText = "background-color: #39ff14;";
       newEntryBody.style.cssText = "background-color: #39ff14;";
     }
+    newEntryTitle.innerHTML = entry.title;
+    newEntryBody.innerHTML = entry.body;
+    document.getElementById("titles").append(newEntryTitle);
+    document.getElementById("bodies").append(newEntryBody);
   }
-  newEntryTitle.innerHTML = entry.title;
-  newEntryBody.innerHTML = entry.body;
-  document.getElementById("titles").append(newEntryTitle);
-  document.getElementById("bodies").append(newEntryBody);
 }
