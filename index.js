@@ -19,10 +19,10 @@ window.onclick = function(event) {
 var noteOutput = [];
 var titleInput = document.getElementById("title");
 var bodyInput = document.getElementById("body");
-var formEl = document.querySelector("form#addNotes");
+var formEl = document.getElementById("addNotes");
 
-formEl.addEventListener("submit", function(evt) {
-  evt.preventDefault();
+formEl.addEventListener("submit", function(e) {
+  e.preventDefault();
   noteOutput.push({ title: titleInput.value, body: bodyInput.value });
   fillArray();
 });
