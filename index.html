@@ -3,89 +3,56 @@
   <head>
     <meta charset="utf-8" />
     <title>Notes App</title>
-    <style>
-      .container {
-        text-align: center;
-      }
-      .column {
-        float: left;
-        width: 60%;
-      }
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.4);
-      }
-      .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-      }
-      .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-      }
-      .close:hover,
-      .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="index.css">
   </head>
   <body>
     <div class="container">
       <div class="titles">
         <span>
           <h1>Your Notes</h1>
-          <button id="myBtn">Add</button>
+          <button id="myBtn" style="float: right;">Add a Note</button>
+          <br />
           <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
               <span class="close">&times;</span>
-              <input type="text" id="title" placeholder="Title" />
-              <br />
-              <input type="text" id="body" placeholder="..." />
-              <br />
-              <button id="save">Save</button>
+              <form id="addNotes">
+                <fieldset>
+                  <input type="text" id="title" placeholder="Title" />
+                  <br />
+                  <input type="text" id="body" placeholder="..." />
+                  <br />
+                  <input type="submit" value="Add Note" />
+                </fieldset>
+              </form>
             </div>
           </div>
         </span>
         <hr />
         <div class="row">
-          <div class="column" style="width: 25%;">
-            fdsfmdslkfslkd
+          <div class="column1" style="border: 2px solid;">
+            Note Title
+            <hr/>
+            <p id="titles"/>
           </div>
-
-          <div class="column">
-            fdslkfjsdkfjlks
+          <div class="column2" id="bod" style="border: 2px solid;">
+            Note Body
+            <hr/>
+            <p id="bodies"/>
           </div>
-          <button class="delete" onclick="deleteNote">Delete</button>
+          <div class="column3">
+            <span class="editDelete">
+              <button class="editButton" style="background-color: yellow;">
+                Edit
+              </button>
+              <button class="deleteButton" style="background-color: red;">
+                Delete
+              </button>
+            </span>
+          </div>
         </div>
       </div>
     </div>
-
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
