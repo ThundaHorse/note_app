@@ -31,6 +31,7 @@ function fillArray() {
   var newEntryTitle = document.createElement("p");
   var newEntryBody = document.createElement("p");
   for (var i = 0; i < noteOutput.length; i++) {
+    // Need to add Edit and Delete button for specific entry
     var entry = noteOutput[i];
     if (i % 2 !== 0) {
       newEntryTitle.style.cssText = "background-color: #CBFFFA;";
