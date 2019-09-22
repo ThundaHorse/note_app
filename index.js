@@ -42,6 +42,11 @@ function fillArray() {
     }
     newEntryTitle.innerHTML = entry.title;
     newEntryBody.innerHTML = entry.body;
+
+    // Button debugging
+    // var editBtn = document.createElement("button");
+    // document.getElementById("titles").append(editBtn);
+
     document.getElementById("titles").append(newEntryTitle);
     document.getElementById("bodies").append(newEntryBody);
   }
