@@ -3,13 +3,13 @@ var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
-btn.onclick = function() {
+btn.onclick = function () {
   modal.style.display = "block";
 };
-span.onclick = function() {
+span.onclick = function () {
   modal.style.display = "none";
 };
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
@@ -21,7 +21,7 @@ var titleInput = document.getElementById("title");
 var bodyInput = document.getElementById("body");
 var formEl = document.getElementById("addNotes");
 
-formEl.addEventListener("submit", function(e) {
+formEl.addEventListener("submit", function (e) {
   e.preventDefault();
   noteOutput.push({ title: titleInput.value, body: bodyInput.value });
   fillArray();
@@ -41,12 +41,7 @@ function fillArray() {
     }
     newEntryTitle.innerHTML = entry.title;
     newEntryBody.innerHTML = entry.body;
-    // Button debugging
-    var editBtn = document.createElement("button");
-    editBtn.style.cssText = "float: right;";
-
     document.getElementById("titles").append(newEntryTitle);
     document.getElementById("bodies").append(newEntryBody);
-    // document.getElementById("bodies").append(editBtn);
   }
 }
