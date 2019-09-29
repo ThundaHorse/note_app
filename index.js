@@ -5,14 +5,23 @@ $(document).ready(function() {
   var span = $(".close");
 
   btn.click(function() {
-    modal.css("display", "block");
+    // modal.css("display", "block");
+    modal.show().animate(
+      {
+        left: "-=50px",
+        right: "+= 50px",
+        width: "+=150px"
+      },
+      500,
+      "swing"
+    );
   });
   span.click(function() {
-    modal.css("display", "none");
+    modal.hide(500, "swing");
   });
   $(window).click(function(event) {
     if (event.target == modal) {
-      modal.css("display", "none");
+      modal.hide(500, "swing");
     }
   });
 
