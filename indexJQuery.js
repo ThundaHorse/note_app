@@ -2,21 +2,12 @@ $(document).ready(function() {
   var modal = $("#myModal");
   var btn = $("#myBtn");
   var span = $(".close");
-  // var editDelete = $("span.editDelete");
 
   btn.click(function() {
-    modal.show().animate(
-      {
-        left: "-=50px",
-        right: "+= 50px",
-        width: "+=150px"
-      },
-      500,
-      "swing"
-    );
+    modal.fadeIn(400);
   });
   span.click(function() {
-    modal.hide(500, "swing");
+    modal.fadeOut(400);
   });
   $(window).click(function(event) {
     if (event.target == modal) {
@@ -44,22 +35,6 @@ $(document).ready(function() {
   function fillArray() {
     var newEntryTitle = document.createElement("p");
     var newEntryBody = document.createElement("p");
-    var editButton = $("<button/>", {
-      text: "Edit",
-      style: "background-color: yellow;",
-      id: "btn_" + i,
-      click: function() {
-        console.log(i);
-      }
-    });
-    var deleteButton = $("<button/>", {
-      text: "Delete",
-      style: "background-color: red;",
-      id: "btn_" + i,
-      click: function() {
-        alert("hi");
-      }
-    });
     for (var i = 0; i < noteOutput.length; i++) {
       var entry = noteOutput[i];
       if (i % 2 !== 0) {
@@ -71,9 +46,14 @@ $(document).ready(function() {
       }
       newEntryTitle.innerHTML = entry.title;
       newEntryBody.innerHTML = entry.body;
-      $("p#titles").append(newEntryTitle);
-      $("p#bodies").append(newEntryBody);
-      $("p#buttons").append(editButton, deleteButton);
+      $(newEntryTitle)
+        .hide()
+        .appendTo("p#titles")
+        .slideDown("fast");
+      $(newEntryBody)
+        .hide()
+        .appendTo("p#bodies")
+        .slideDown("fast");
     }
   }
 });

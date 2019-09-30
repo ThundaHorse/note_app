@@ -11,7 +11,7 @@
 }
 .column3 {
   float: left;
-  width: 10%;
+  width: auto;
 }
 .row:after {
   content: "";
