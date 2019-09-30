@@ -40,7 +40,11 @@ $(document).ready(function() {
   function fillArray() {
     var newEntryTitle = document.createElement("p");
     var newEntryBody = document.createElement("p");
+    var editButton = document.createElement("button");
     for (var i = 0; i < noteOutput.length; i++) {
+      $(editButton)
+        .text("Edit")
+        .css("float", "right");
       var entry = noteOutput[i];
       if (i % 2 !== 0) {
         $(newEntryTitle).css("background-color", "#CBFFFA");
@@ -52,7 +56,7 @@ $(document).ready(function() {
       newEntryTitle.innerHTML = entry.title;
       newEntryBody.innerHTML = entry.body;
       $("p#titles").append(newEntryTitle);
-      $("p#bodies").append(newEntryBody);
+      $("p#bodies").append(newEntryBody, editButton);
     }
   }
 
