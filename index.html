@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <title>Notes App</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
+
   <body>
     <div class="container">
       <div class="titles">
@@ -32,28 +33,32 @@
         <div class="row">
           <div class="column1" style="border: 2px solid;">
             Note Title
-            <hr/>
-            <p id="titles"/>
+            <hr />
+            <p id="titles" />
           </div>
           <div class="column2" id="bod" style="border: 2px solid;">
             Note Body
-            <hr/>
-            <p id="bodies"/>
+            <hr />
+            <p id="bodies" />
           </div>
-          <div class="column3">
-            <span class="editDelete">
-              <button class="editButton" style="background-color: yellow;">
-                Edit
-              </button>
-              <button class="deleteButton" style="background-color: red;">
-                Delete
-              </button>
-            </span>
+          <div class="column3" style="border: 2px solid;">
+            <!-- <span class="editDelete"> -->
+              <!-- <button class="editButton" style="background-color: yellow;">
+              Edit
+            </button>
+            <button class="deleteButton" style="background-color: red;">
+              Delete
+            </button> -->
+            <!-- </span> -->
+            Edit/Delete 
+            <hr />
+            <p id="buttons" />
           </div>
         </div>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="indexJQuery.js"></script>
+    <!-- <script type="text/javascript" src="index.js"></script> -->
   </body>
 </html>
